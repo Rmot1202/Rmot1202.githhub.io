@@ -81,94 +81,96 @@
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
     }
+
     /* --- GIF Slider --- */
-.gif-slider { padding: 14px; }
-.gif-slider-viewport {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius);
-  border: 1px solid color-mix(in oklab, var(--panel), #fff 10%);
-  background: color-mix(in oklab, var(--panel), var(--bg) 35%);
-  box-shadow: var(--shadow);
-}
-.gif-track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  align-items: center;
-  transition: transform .45s ease;
-}
-.gif-slide {
-  margin: 0;
-  display: grid;
-  gap: 8px;
-  justify-items: center;
-  padding: 12px;
-}
-.gif-slide img {
-  width: 100%;
-  height: auto;
-  max-height: 540px;
-  object-fit: contain;
-  border-radius: 12px;
-  border: 1px solid color-mix(in oklab, var(--panel), #fff 14%);
-  box-shadow: var(--shadow);
-  background: var(--panel);
-}
-.gif-slide figcaption {
-  font-size: 14px;
-  color: var(--muted);
-  text-align: center;
-}
+    .gif-slider { padding: 14px 0 0; }
+    .gif-slider-viewport {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid color-mix(in oklab, var(--panel), #fff 10%);
+      background: color-mix(in oklab, var(--panel), var(--bg) 35%);
+      box-shadow: var(--shadow);
+      margin-top: 10px;
+    }
+    .gif-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+      align-items: center;
+      transition: transform .45s ease;
+    }
+    .gif-slide {
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      justify-items: center;
+      padding: 12px;
+    }
+    .gif-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 540px;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid color-mix(in oklab, var(--panel), #fff 14%);
+      box-shadow: var(--shadow);
+      background: var(--panel);
+    }
+    .gif-slide figcaption {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+    }
 
-.gif-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 0;
-  width: 40px; height: 40px;
-  border-radius: 999px;
-  background: linear-gradient(45deg,var(--brand),var(--brand-2));
-  color: #fff;
-  font-weight: 800;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  box-shadow: var(--shadow);
-}
-.gif-btn.prev { left: 10px; }
-.gif-btn.next { right: 10px; }
-.gif-btn:focus-visible { outline: 3px solid color-mix(in oklab, var(--brand), #fff 25%); }
+    .gif-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      width: 40px; height: 40px;
+      border-radius: 999px;
+      background: linear-gradient(45deg,var(--brand),var(--brand-2));
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+    }
+    .gif-btn.prev { left: 10px; }
+    .gif-btn.next { right: 10px; }
+    .gif-btn:focus-visible { outline: 3px solid color-mix(in oklab, var(--brand), #fff 25%); }
 
-.gif-dots {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  padding: 10px 0 2px;
-}
-.gif-dot {
-  width: 8px; height: 8px; border-radius: 999px;
-  background: color-mix(in oklab, var(--panel), #fff 12%);
-  border: 1px solid color-mix(in oklab, var(--panel), #fff 22%);
-  cursor: pointer;
-}
-.gif-dot[aria-selected="true"] {
-  background: linear-gradient(45deg,var(--brand),var(--brand-2));
-  border-color: transparent;
-}
+    .gif-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      padding: 10px 0 2px;
+    }
+    .gif-dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: color-mix(in oklab, var(--panel), #fff 12%);
+      border: 1px solid color-mix(in oklab, var(--panel), #fff 22%);
+      cursor: pointer;
+    }
+    .gif-dot[aria-selected="true"] {
+      background: linear-gradient(45deg,var(--brand),var(--brand-2));
+      border-color: transparent;
+    }
 
-.gif-opts { display:flex; justify-content:center; margin-top:8px; }
-.gif-toggle[aria-pressed="true"] { outline: 2px solid var(--brand); }
+    .gif-opts { display:flex; justify-content:center; margin-top:8px; }
+    .gif-toggle[aria-pressed="true"] { outline: 2px solid var(--brand); }
 
-/* Small screens */
-@media (max-width: 680px) {
-  .gif-btn { width: 34px; height: 34px; }
-}
+    /* Small screens */
+    @media (max-width: 680px) {
+      .gif-btn { width: 34px; height: 34px; }
+    }
 
-/* Respect reduced motion: no autoplay and gentler transitions */
-@media (prefers-reduced-motion: reduce) {
-  .gif-track { transition: none; }
-}
+    /* Respect reduced motion: no autoplay and gentler transitions */
+    @media (prefers-reduced-motion: reduce) {
+      .gif-track { transition: none; }
+    }
   </style>
 
 </head>
@@ -194,7 +196,7 @@
         <span class="badge" title="Virginia State University">CS @ VSU ’26 • Honors</span>
         <span class="badge" title="Johns Hopkins Explore Hopkins">EHOP ’25 Alum</span>
         <h1>Android • Web • Data/ML • Cybersecurity<br />I build inclusive, reliable software.</h1>
-        <p class="lead">I’m Raven Mott — a Computer Science student who ships end‑to‑end: Android (Jetpack Compose), full‑stack web (HTML/CSS/JS, Flask, Firebase), data & ML (TensorFlow/Sklearn), and cybersecurity/digital forensics (Wireshark, Autopsy, FTK). Current flagship: <strong>Gestura</strong>, an AI‑powered ASL translator app.</p>
+        <p class="lead">I’m Raven Mott — a Computer Science student who ships end-to-end: Android (Jetpack Compose), full-stack web (HTML/CSS/JS, Flask, Firebase), data & ML (TensorFlow/Sklearn), and cybersecurity/digital forensics (Wireshark, Autopsy, FTK). Current flagship: <strong>Gestura</strong>, an AI-powered ASL translator app.</p>
         <div class="chips" role="list" aria-label="Skills">
           <span class="chip" role="listitem">Kotlin / Compose</span>
           <span class="chip" role="listitem">Java</span>
@@ -206,7 +208,7 @@
           <span class="chip" role="listitem">Flask</span>
           <span class="chip" role="listitem">Firebase</span>
           <span class="chip" role="listitem">TensorFlow / TFLite</span>
-          <span class="chip" role="listitem">Scikit‑learn</span>
+          <span class="chip" role="listitem">Scikit-learn</span>
           <span class="chip" role="listitem">SVM • XGBoost • LSTM</span>
           <span class="chip" role="listitem">Docker</span>
           <span class="chip" role="listitem">FastAPI</span>
@@ -229,16 +231,15 @@
         <ul style="margin:0;padding-left:18px;color:var(--muted)">
           <li>Android, Web, Data/ML, & Cyber Forensics</li>
           <li>IBM SkillsBuild Cohort Lead (Fall ’25)</li>
-          <li>MS‑CC Undergraduate Research — Climate & Yield</li>
+          <li>MS-CC Undergraduate Research — Climate & Yield</li>
           <li>Senior Project I @ VSU — <em>Gestura</em></li>
         </ul>
         <div class="meta" style="margin-top:14px;">
-          <span>Mobile & Full‑Stack</span>
+          <span>Mobile & Full-Stack</span>
           <span>ML & Analytics</span>
           <span>Cyber & Forensics</span>
           <span>UI/UX</span>
         </div>
-      </div>
       </div>
     </section>
 
@@ -246,14 +247,14 @@
     <section id="about">
       <h2 class="section-title">About</h2>
       <div class="card">
-        <p>I’m Raven Mott, a CS student at Virginia State University (’26, Honors) who builds end‑to‑end systems at the intersection of mobile apps, data/ML, and cybersecurity. VSU’s support reshaped my path, and I try to honor that by shipping work that serves people—whether it’s <em>Gestura</em>, my AI‑powered ASL translator inspired by Deaf family, climate‑to‑yield modeling that pairs rigor with real agronomy, or a malware triage pipeline that treats chain‑of‑custody as a first‑class requirement. I lead by serving—mentoring peers, doing outreach, and connecting technical work to measurable public benefit. Long‑term, I plan to serve in the Air Force’s cyber mission (17X) and later continue in federal service (FBI/CIA), focusing on secure systems, digital forensics, and trustworthy ML. Bottom line: I build reliable software that people can depend on—and I follow through until it’s useful in the real world.</p>
+        <p>I’m Raven Mott, a CS student at Virginia State University (’26, Honors) who builds end-to-end systems at the intersection of mobile apps, data/ML, and cybersecurity. VSU’s support reshaped my path, and I try to honor that by shipping work that serves people—whether it’s <em>Gestura</em>, my AI-powered ASL translator inspired by Deaf family, climate-to-yield modeling that pairs rigor with real agronomy, or a malware triage pipeline that treats chain-of-custody as a first-class requirement. I lead by serving—mentoring peers, doing outreach, and connecting technical work to measurable public benefit. Long-term, I plan to serve in the Air Force’s cyber mission (17X) and later continue in federal service (FBI/CIA), focusing on secure systems, digital forensics, and trustworthy ML. Bottom line: I build reliable software that people can depend on—and I follow through until it’s useful in the real world.</p>
       </div>
     </section>
 
     <section id="education">
       <h2 class="section-title">Education</h2>
       <div class="card">
-        <p><strong>Virginia State University</strong> — B.S. in Computer Science (Expected Spring 2026). Current GPA: <strong>3.69</strong>. Honors Student; EST University STEM Scholarship; Undergraduate Researcher.</p>
+        <p><strong>Virginia State University</strong> — B.S. in Computer Science (Cybersecurity Concentration), Minor in Mathematics (Expected Spring 2026). Current GPA: <strong>3.69</strong>. Honors Student; EST University STEM Scholarship; Undergraduate Researcher.</p>
       </div>
       <div class="card" style="margin-top:12px;">
         <h3 style="margin:0 0 6px; font-size:18px;">South Carolina State University — Transient (Summer 2025)</h3>
@@ -327,88 +328,112 @@
     <section id="projects">
       <h2 class="section-title">Featured Projects</h2>
       <div class="grid cards">
+        <!-- Gestura Card -->
         <article class="card">
           <h3>Gestura — ASL Translator (Android)</h3>
-          <p>Android/Compose app converting ASL gestures to natural‑language sentences and back to ASL avatar; Firebase auth, MediaPipe/TFLite pipeline, multilingual support.</p>
-          <div class="meta"><span>Kotlin</span><span>TensorFlow Lite</span><span>Firebase</span></div>
-          <p style="margin-top:10px"><a href="https://github.com/Rmot1202/Gestura" target="_blank" rel="noopener">GitHub Repo</a></p>
-          <article class="card">
-  <div class="gif-slider" aria-label="Gestura progress gallery" data-autoplay="true" data-interval="3500">
-    <h3 style="margin:0 0 8px; font-size:18px;">Gestura — Progress GIFs</h3>
+          <p>Android/Compose app converting ASL gestures to natural-language sentences and back to ASL avatar; Firebase auth, MediaPipe/TFLite pipeline, multilingual support.</p>
+          <div class="meta">
+            <span>Kotlin</span><span>TensorFlow Lite</span><span>Firebase</span>
+          </div>
+          <p style="margin-top:10px">
+            <a href="https://github.com/Rmot1202/Gestura" target="_blank" rel="noopener">GitHub Repo</a>
+          </p>
 
-    <div class="gif-slider-viewport">
-      <button class="gif-btn prev" type="button" aria-label="Previous slide">‹</button>
+          <div class="gif-slider" aria-label="Gestura progress gallery" data-autoplay="true" data-interval="3500">
+            <h3 style="margin:0 0 8px; font-size:18px;">Gestura — Progress GIFs</h3>
 
-      <div class="gif-track">
-        <figure class="gif-slide is-active">
-          <img src="login.gif" alt="Login flow" loading="lazy" />
-          <figcaption>Login </figcaption>
-        </figure>
+            <div class="gif-slider-viewport">
+              <button class="gif-btn prev" type="button" aria-label="Previous slide">‹</button>
 
-        <figure class="gif-slide">
-          <img src="Lang.gif" alt="Language Translation screen with text and voice input" loading="lazy" />
-          <figcaption>Language Translation module</figcaption>
-        </figure>
+              <div class="gif-track">
+                <figure class="gif-slide is-active">
+                  <img src="login.gif" alt="Gestura login flow" loading="lazy" />
+                  <figcaption>Login</figcaption>
+                </figure>
 
-        <figure class="gif-slide">
-          <img src="bottomnav.gif" alt="ASL Translation page with upload and processing UI" loading="lazy" />
-          <figcaption>Bottom NAV</figcaption>
-        </figure>
-      </div>
+                <figure class="gif-slide">
+                  <img src="Lang.gif" alt="Language translation screen with text and voice input in Gestura" loading="lazy" />
+                  <figcaption>Language Translation module</figcaption>
+                </figure>
 
-      <button class="gif-btn next" type="button" aria-label="Next slide">›</button>
-    </div>
+                <figure class="gif-slide">
+                  <img src="bottomnav.gif" alt="Bottom navigation and ASL translation page in Gestura" loading="lazy" />
+                  <figcaption>Bottom navigation</figcaption>
+                </figure>
+              </div>
 
-    <div class="gif-dots" role="tablist" aria-label="Slide navigation dots"></div>
-    <div class="gif-opts">
-      <button class="btn secondary gif-toggle" type="button" aria-pressed="false">Auto-play</button>
-    </div>
-  </div>
-</article>
+              <button class="gif-btn next" type="button" aria-label="Next slide">›</button>
+            </div>
 
+            <div class="gif-dots" role="tablist" aria-label="Slide navigation dots"></div>
+            <div class="gif-opts">
+              <button class="btn secondary gif-toggle" type="button" aria-pressed="false">Auto-play</button>
+            </div>
+          </div>
         </article>
+
+        <!-- Food Nav -->
         <article class="card">
-          <h3>AI‑Powered Food Navigation Web App</h3>
-          <p>Flask web app with an AI chatbot and dynamic menu browsing; stores contact submissions with SQLAlchemy and integrates a third‑party food imagery API.</p>
-          <div class="meta"><span>Python</span><span>Flask</span><span>SQLite/SQLAlchemy</span></div>
-          <p style="margin-top:10px"><a href="https://github.com/Rmot1202/Food-Website" target="_blank" rel="noopener">GitHub Repo</a> • <a href="https://rmot1202.pythonanywhere.com/" target="_blank" rel="noopener">Live Demo</a></p>
+          <h3>AI-Powered Food Navigation Web App</h3>
+          <p>Flask web app with an AI chatbot and dynamic menu browsing; stores contact submissions with SQLAlchemy and integrates a third-party food imagery API.</p>
+          <div class="meta">
+            <span>Python</span><span>Flask</span><span>SQLite/SQLAlchemy</span>
+          </div>
+          <p style="margin-top:10px">
+            <a href="https://github.com/Rmot1202/Food-Website" target="_blank" rel="noopener">GitHub Repo</a> •
+            <a href="https://rmot1202.pythonanywhere.com/" target="_blank" rel="noopener">Live Demo</a>
+          </p>
         </article>
+
+        <!-- ASL Terminal Prototype -->
         <article class="card">
           <h3>AI-Based ASL Interpreter with NLP (Terminal-Only Prototype)</h3>
           <p>Terminal-based AI pipeline that translates static American Sign Language (ASL) alphabet images into English text, then uses a lightweight NLP step (via GPT) to “naturalize” the output into fluent sentences.</p>
-          <div class="meta"><span>Python</span><span>CNN</span>OpenAI<span>NLP</span></div>
-          <p style="margin-top:10px"><a href="https://github.com/Rmot1202/asl_nlp_terminal.git" target="_blank" rel="noopener">GitHub Repo</a></p>
-          <div class="gif-slider" aria-label="Gestura progress gallery" data-autoplay="true" data-interval="3500">
-    <h3 style="margin:0 0 8px; font-size:18px;">Terminal GIFs</h3>
+          <div class="meta">
+            <span>Python</span><span>CNN</span><span>OpenAI</span><span>NLP</span>
+          </div>
+          <p style="margin-top:10px">
+            <a href="https://github.com/Rmot1202/asl_nlp_terminal.git" target="_blank" rel="noopener">GitHub Repo</a>
+          </p>
 
-    <div class="gif-slider-viewport">
-      <button class="gif-btn prev" type="button" aria-label="Previous slide">‹</button>
+          <div class="gif-slider" aria-label="ASL NLP terminal demo gallery" data-autoplay="true" data-interval="3500">
+            <h3 style="margin:0 0 8px; font-size:18px;">Terminal GIFs</h3>
 
-      <div class="gif-track">
-        <figure class="gif-slide is-active">
-          <img src="demo_AI.gif" alt="Login flow" loading="lazy" />
-          <figcaption>In Action </figcaption>
-        </figure>
+            <div class="gif-slider-viewport">
+              <button class="gif-btn prev" type="button" aria-label="Previous slide">‹</button>
 
-      
+              <div class="gif-track">
+                <figure class="gif-slide is-active">
+                  <img src="demo_AI.gif" alt="Terminal ASL NLP demo running in the console" loading="lazy" />
+                  <figcaption>In action</figcaption>
+                </figure>
+              </div>
 
-      <button class="gif-btn next" type="button" aria-label="Next slide">›</button>
-    </div>
+              <button class="gif-btn next" type="button" aria-label="Next slide">›</button>
+            </div>
 
-    <div class="gif-dots" role="tablist" aria-label="Slide navigation dots"></div>
-    <div class="gif-opts">
-      <button class="btn secondary gif-toggle" type="button" aria-pressed="false">Auto-play</button>
-    </div>
-  </div>
+            <div class="gif-dots" role="tablist" aria-label="Slide navigation dots"></div>
+            <div class="gif-opts">
+              <button class="btn secondary gif-toggle" type="button" aria-pressed="false">Auto-play</button>
+            </div>
+          </div>
         </article>
+
+        <!-- Malware Pipeline -->
         <article class="card">
           <h3>Malware Analysis System</h3>
           <p>Client→Controller→Docker Sandbox→VirusTotal pipeline; executes binaries in containerized sandboxes and aggregates VT intelligence.</p>
-          <div class="meta"><span>Python</span><span>Docker</span><span>VirusTotal API</span></div>
-          <p style="margin-top:10px"><a href="https://github.com/Rmot1202/malware-triage-pipeline.git" target="_blank" rel="noopener">GitHub Repo</a></p>
+          <div class="meta">
+            <span>Python</span><span>Docker</span><span>VirusTotal API</span>
+          </div>
+          <p style="margin-top:10px">
+            <a href="https://github.com/Rmot1202/malware-triage-pipeline.git" target="_blank" rel="noopener">GitHub Repo</a>
+          </p>
         </article>
       </div>
-      <p style="margin-top:14px"><a class="btn secondary" href="https://github.com/Rmot1202?tab=repositories" target="_blank" rel="noopener">Browse All Repositories</a></p>
+      <p style="margin-top:14px">
+        <a class="btn secondary" href="https://github.com/Rmot1202?tab=repositories" target="_blank" rel="noopener">Browse All Repositories</a>
+      </p>
     </section>
 
     <!-- SKILLS -->
@@ -427,7 +452,7 @@
         </article>
         <article class="card">
           <h3>Machine Learning & Analytics</h3>
-          <p>TensorFlow/TFLite, scikit‑learn; SVM, Logistic Regression, Decision Trees, XGBoost/GBM, K‑means, LSTM; Tableau & Power BI dashboards.</p>
+          <p>TensorFlow/TFLite, scikit-learn; SVM, Logistic Regression, Decision Trees, XGBoost/GBM, K-means, LSTM; Tableau & Power BI dashboards.</p>
           <div class="meta"><span>TensorFlow</span><span>TFLite</span><span>Sklearn</span><span>XGBoost</span><span>LSTM</span></div>
         </article>
         <article class="card">
@@ -450,12 +475,12 @@
         <article class="card">
           <h3>SVM for Neutron Event Classification — Nuclear Science Lab (VSU)</h3>
           <p>Built and tuned SVM on real scintillator detector data (MAME project). ~95% accuracy; best F1≈0.93, AUC≈0.96 with linear kernel.</p>
-          <div class="meta"><span>Python</span><span>SVM</span><span>Scikit‑learn</span></div>
+          <div class="meta"><span>Python</span><span>SVM</span><span>Scikit-learn</span></div>
         </article>
         <article class="card">
-          <h3>Climate & Agricultural Yield — Fisk & Meharry (MS‑CC)</h3>
-          <p>Merged USDA yields (2017–2022) with WRF‑HRRR features; engineered heat‑day streaks & drought duration; LSTM reached R² > 0.93 with strong RMSE reduction.</p>
-          <div class="meta"><span>LSTM</span><span>XGBoost</span><span>Time‑series</span></div>
+          <h3>Climate & Agricultural Yield — Fisk & Meharry (MS-CC)</h3>
+          <p>Merged USDA yields (2017–2022) with WRF-HRRR features; engineered heat-day streaks & drought duration; LSTM reached R² > 0.93 with strong RMSE reduction.</p>
+          <div class="meta"><span>LSTM</span><span>XGBoost</span><span>Time-series</span></div>
         </article>
         <article class="card">
           <h3>Urban Heat Island Analysis — DSPG (VSU)</h3>
@@ -481,11 +506,12 @@
         </article>
         <article class="card">
           <h3>IBM SkillsBuild — Cohort Lead</h3>
-          <p>Mentored first‑year students in foundational CS and career skills; organized learning paths and peer reviews.</p>
+          <p>Mentored first-year students in foundational CS and career skills; organized learning paths and peer reviews.</p>
           <div class="meta"><span>Mentorship</span><span>Leadership</span></div>
         </article>
       </div>
     </section>
+
     <!-- CONTACT -->
     <section id="contact">
       <h2 class="section-title">Contact</h2>
@@ -499,13 +525,16 @@
       </div>
     </section>
 
+    <!-- RESUME -->
     <section id="resume">
       <h2 class="section-title">Resume</h2>
       <div class="card" id="resume-note">
         <div style="aspect-ratio: 8.5/11; width:100%; max-height: 90vh; background: color-mix(in oklab, var(--panel), #fff 4%); border-radius:12px; overflow:hidden; border:1px solid color-mix(in oklab, var(--panel), #fff 10%);">
           <iframe title="Raven Mott — Resume" src="Raven Mott_resume.pdf#zoom=page-fit" style="width:100%; height:100%; border:0;" loading="lazy"></iframe>
         </div>
-        <p style="margin-top:10px"><a class="btn secondary" href="Raven Mott_resume.pdf" target="_blank" rel="noopener">Open Resume in New Tab</a></p
+        <p style="margin-top:10px">
+          <a class="btn secondary" href="Raven Mott_resume.pdf" target="_blank" rel="noopener">Open Resume in New Tab</a>
+        </p>
       </div>
     </section>
 
@@ -515,7 +544,7 @@
       <div class="grid cards">
         <div class="card">
           <h3 style="margin:0 0 8px; font-size:18px;">Climate & Yield — Deep Learning Study</h3>
-          <p style="margin:0 0 8px; color:var(--muted)">MS‑CC research deck summarizing LSTM vs. tree ensembles for U.S. crop yields.</p>
+          <p style="margin:0 0 8px; color:var(--muted)">MS-CC research deck summarizing LSTM vs. tree ensembles for U.S. crop yields.</p>
           <div style="aspect-ratio:16/9; width:100%; background: color-mix(in oklab, var(--panel), #fff 4%); border-radius:12px; overflow:hidden; border:1px solid color-mix(in oklab, var(--panel), #fff 10%);">
             <iframe title="Evaluating Climate Change Effects on Agricultural Yield Using Deep Learning" src="Evaluating-Climate-Change-Effects-on-Agricultural-Yield-Using-Deep-Learning.pdf#zoom=page-fit" style="width:100%; height:100%; border:0;" loading="lazy"></iframe>
           </div>
@@ -523,7 +552,7 @@
         </div>
         <div class="card">
           <h3 style="margin:0 0 8px; font-size:18px;">Uber 2016 Breach — Corporate Secrecy</h3>
-          <p style="margin:0 0 8px; color:var(--muted)">Case study on the breach, cover‑up, and legal consequences; lessons for cyber programs.</p>
+          <p style="margin:0 0 8px; color:var(--muted)">Case study on the breach, cover-up, and legal consequences; lessons for cyber programs.</p>
           <div style="aspect-ratio:16/9; width:100%; background: color-mix(in oklab, var(--panel), #fff 4%); border-radius:12px; overflow:hidden; border:1px solid color-mix(in oklab, var(--panel), #fff 10%);">
             <iframe title="The 2016 Uber Data Breach: Corporate Secrecy and Its Consequences" src="The-2016-Uber-Data-Breach-Corporate-Secrecy-and-Its-Consequences.pdf#zoom=page-fit" style="width:100%; height:100%; border:0;" loading="lazy"></iframe>
           </div>
@@ -533,7 +562,7 @@
           <h3 style="margin:0 0 8px; font-size:18px;">Gestura — Senior Project Overview</h3>
           <p style="margin:0 0 8px; color:var(--muted)">Slides outlining Gestura's goals, timeline, and tech stack (Android, TFLite, Firebase).</p>
           <div style="aspect-ratio:16/9; width:100%; background: color-mix(in oklab, var(--panel), #fff 4%); border-radius:12px; overflow:hidden; border:1px solid color-mix(in oklab, var(--panel), #fff 10%);">
-            <iframe title="Gestura: AI‑Powered Mobile Application for Inclusive Communication" src="Gestura-AI-Powered-Mobile-Application-for-Inclusive-Communication.pdf#zoom=page-fit" style="width:100%; height:100%; border:0;" loading="lazy"></iframe>
+            <iframe title="Gestura: AI-Powered Mobile Application for Inclusive Communication" src="Gestura-AI-Powered-Mobile-Application-for-Inclusive-Communication.pdf#zoom=page-fit" style="width:100%; height:100%; border:0;" loading="lazy"></iframe>
           </div>
           <p style="font-size:14px; color: var(--muted); margin-top:8px;">If the PDF viewer doesn't display, <a href="Gestura-AI-Powered-Mobile-Application-for-Inclusive-Communication.pdf" target="_blank" rel="noopener">open in a new tab</a>.</p>
         </div>
@@ -550,106 +579,115 @@
   <script>
     // current year
     document.getElementById('year').textContent = new Date().getFullYear();
+
     // a11y helper for labels without visible text
-    document.querySelectorAll('.sr').forEach(el=>{ el.style.position='absolute'; el.style.width='1px'; el.style.height='1px'; el.style.overflow='hidden'; el.style.clip='rect(1px,1px,1px,1px)'; el.style.whiteSpace='nowrap'; });
-  
-(function () {
-  const sliders = document.querySelectorAll('.gif-slider');
-  sliders.forEach((root) => {
-    const track = root.querySelector('.gif-track');
-    const slides = Array.from(root.querySelectorAll('.gif-slide'));
-    const prev = root.querySelector('.gif-btn.prev');
-    const next = root.querySelector('.gif-btn.next');
-    const dotsWrap = root.querySelector('.gif-dots');
-    const toggleBtn = root.querySelector('.gif-toggle');
-
-    let index = 0;
-    let autoplay = root.dataset.autoplay === 'true';
-    const intervalMs = Number(root.dataset.interval || 3500);
-    let timer = null;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) autoplay = false;
-
-    // Build dots
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'gif-dot';
-      dot.type = 'button';
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-      dot.addEventListener('click', () => go(i));
-      dotsWrap.appendChild(dot);
+    document.querySelectorAll('.sr').forEach(el=>{ 
+      el.style.position='absolute'; 
+      el.style.width='1px'; 
+      el.style.height='1px'; 
+      el.style.overflow='hidden'; 
+      el.style.clip='rect(1px,1px,1px,1px)'; 
+      el.style.whiteSpace='nowrap'; 
     });
 
-    function sync() {
-      track.style.transform = `translateX(${index * -100}%)`;
-      dotsWrap.querySelectorAll('.gif-dot').forEach((d, i) => {
-        d.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    (function () {
+      const sliders = document.querySelectorAll('.gif-slider');
+      sliders.forEach((root) => {
+        const track = root.querySelector('.gif-track');
+        const slides = Array.from(root.querySelectorAll('.gif-slide'));
+        const prev = root.querySelector('.gif-btn.prev');
+        const next = root.querySelector('.gif-btn.next');
+        const dotsWrap = root.querySelector('.gif-dots');
+        const toggleBtn = root.querySelector('.gif-toggle');
+
+        let index = 0;
+        let autoplay = root.dataset.autoplay === 'true';
+        const intervalMs = Number(root.dataset.interval || 3500);
+        let timer = null;
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduced) autoplay = false;
+
+        // Build dots
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.className = 'gif-dot';
+          dot.type = 'button';
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          dot.addEventListener('click', () => go(i));
+          dotsWrap.appendChild(dot);
+        });
+
+        function sync() {
+          track.style.transform = `translateX(${index * -100}%)`;
+          dotsWrap.querySelectorAll('.gif-dot').forEach((d, i) => {
+            d.setAttribute('aria-selected', i === index ? 'true' : 'false');
+          });
+        }
+
+        function go(i) {
+          index = (i + slides.length) % slides.length;
+          sync();
+        }
+
+        function nextSlide() { go(index + 1); }
+        function prevSlide() { go(index - 1); }
+
+        prev?.addEventListener('click', nextSlide); // (prev goes back)
+        next?.addEventListener('click', nextSlide);
+
+        // Keyboard
+        root.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') nextSlide();
+          if (e.key === 'ArrowLeft')  prevSlide();
+        });
+        root.setAttribute('tabindex', '0');
+
+        // Swipe (pointer)
+        let startX = null;
+        track.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+        track.addEventListener('pointerup', (e) => {
+          if (startX === null) return;
+          const dx = e.clientX - startX;
+          if (Math.abs(dx) > 40) (dx < 0 ? nextSlide() : prevSlide());
+          startX = null;
+        });
+
+        // Autoplay
+        function start() {
+          stop();
+          if (!autoplay) return;
+          timer = setInterval(nextSlide, intervalMs);
+          toggleBtn?.setAttribute('aria-pressed', 'true');
+        }
+        function stop() {
+          if (timer) clearInterval(timer);
+          timer = null;
+          toggleBtn?.setAttribute('aria-pressed', 'false');
+        }
+        toggleBtn?.addEventListener('click', () => {
+          autoplay = !autoplay;
+          autoplay ? start() : stop();
+        });
+
+        // Pause when off-screen or on hover/focus
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((en) => en.isIntersecting ? start() : stop());
+        }, { threshold: 0.2 });
+        io.observe(root);
+
+        root.addEventListener('mouseenter', stop);
+        root.addEventListener('mouseleave', () => autoplay && start());
+        root.addEventListener('focusin', stop);
+        root.addEventListener('focusout', () => autoplay && start());
+
+        // Init
+        if (slides.length > 0) {
+          sync();
+        }
+        autoplay ? start() : stop();
       });
-    }
-
-    function go(i) {
-      index = (i + slides.length) % slides.length;
-      sync();
-    }
-
-    function nextSlide() { go(index + 1); }
-    function prevSlide() { go(index - 1); }
-
-    prev.addEventListener('click', prevSlide);
-    next.addEventListener('click', nextSlide);
-
-    // Keyboard
-    root.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft')  prevSlide();
-    });
-    root.setAttribute('tabindex', '0');
-
-    // Swipe (pointer)
-    let startX = null;
-    track.addEventListener('pointerdown', (e) => { startX = e.clientX; });
-    track.addEventListener('pointerup', (e) => {
-      if (startX === null) return;
-      const dx = e.clientX - startX;
-      if (Math.abs(dx) > 40) (dx < 0 ? nextSlide() : prevSlide());
-      startX = null;
-    });
-
-    // Autoplay
-    function start() {
-      stop();
-      if (!autoplay) return;
-      timer = setInterval(nextSlide, intervalMs);
-      toggleBtn?.setAttribute('aria-pressed', 'true');
-    }
-    function stop() {
-      if (timer) clearInterval(timer);
-      timer = null;
-      toggleBtn?.setAttribute('aria-pressed', 'false');
-    }
-    toggleBtn?.addEventListener('click', () => {
-      autoplay = !autoplay;
-      autoplay ? start() : stop();
-    });
-
-    // Pause when off-screen or on hover/focus
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => en.isIntersecting ? start() : stop());
-    }, { threshold: 0.2 });
-    io.observe(root);
-
-    root.addEventListener('mouseenter', stop);
-    root.addEventListener('mouseleave', () => autoplay && start());
-    root.addEventListener('focusin', stop);
-    root.addEventListener('focusout', () => autoplay && start());
-
-    // Init
-    sync();
-    autoplay ? start() : stop();
-  });
-})();
-
+    })();
   </script>
 </body>
 </html>
